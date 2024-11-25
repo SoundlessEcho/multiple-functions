@@ -129,7 +129,7 @@ multiple_functions_syntax(parameter, command)
 
             case "For Function":
             /*
-            How to call For Each Function syntax
+            How to call For Function syntax
 
             Option Definition = ( "Name Function", "Function", "parameter 1", "parameter 2", "parameter 3", "parameter 4", "parameter 5" )
             self Option( "Test For Function", ::multiple_functions, undefined, "For Function" );
