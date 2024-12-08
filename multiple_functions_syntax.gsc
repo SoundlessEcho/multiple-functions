@@ -26,14 +26,14 @@ multiple_functions_syntax(parameter, command)
             How to call Basic Function syntax
 
             Option Definition = ( "Name Function", "Function", "parameter 1", "parameter 2", "parameter 3", "parameter 4", "parameter 5" )
-            self Option( "Test Basic Function", ::multiple_functions, undefined, "Basic Function" );
-            self Option( "Test Basic Function Parameter", ::multiple_functions, "Hello Parameter", "Basic Function" );
+            self Option( "Test Basic Function", ::multiple_functions_syntax, undefined, "Basic Function" );
+            self Option( "Test Basic Function Parameter", ::multiple_functions_syntax, "Hello Parameter", "Basic Function" );
 
             SliderString Definition = ( "Name Function", "Name ID", "Name", "Function", "parameter 1", "parameter 2", "parameter 3", "parameter 4", "parameter 5" )
-            self SliderString( "Test Basic Function Parameter", "Hello 1, Hello 2", "Hello 1,Hello 2", ::multiple_functions, "Basic Function" );
+            self SliderString( "Test Basic Function Parameter", "Hello 1, Hello 2", "Hello 1,Hello 2", ::multiple_functions_syntax, "Basic Function" );
 
             SliderValue Definition = ( "Name Function", "Number to start with", "Minimum number", "Max number", "Multiply number", "Function", "parameter 1", "parameter 2", "parameter 3", "parameter 4", "parameter 5" )
-            self SliderValue( "Test Basic Function Parameter", 0, 0, 50, 1, ::multiple_functions, "Basic Function" );
+            self SliderValue( "Test Basic Function Parameter", 0, 0, 50, 1, ::multiple_functions_syntax, "Basic Function" );
             */
 
             //self iPrintlnBold( "Placeholder for function logic: ^1" + parameter[0] ); // If you want to use parameter || Use iPrintlnBold to debug code
@@ -45,8 +45,8 @@ multiple_functions_syntax(parameter, command)
             How to call If statement syntax
 
             Option Definition = ( "Name Function", "Function", "parameter 1", "parameter 2", "parameter 3", "parameter 4", "parameter 5" )
-            self Option( "Test Basic Function Parameter", ::multiple_functions, "name_1", "If Function" );
-            self Option( "Test Basic Function Parameter", ::multiple_functions, "name_2", "If Function" );
+            self Option( "Test Basic Function Parameter", ::multiple_functions_syntax, "name_1", "If Function" );
+            self Option( "Test Basic Function Parameter", ::multiple_functions_syntax, "name_2", "If Function" );
             */
 
             if(parameter[0] == "name_1") // if statement on one line of code
@@ -65,10 +65,10 @@ multiple_functions_syntax(parameter, command)
             How to call Toggle Function syntax
 
             ToggleCheckBox Definition = ( "Name Function", "Toggle", "Function", "parameter 1", "parameter 2", "parameter 3", "parameter 4", "parameter 5" )
-            self ToggleCheckBox( "Test Toggle", isDefined( player.Toggle ), ::multiple_functions, undefined, "Toggle Function" );  
+            self ToggleCheckBox( "Test Toggle", isDefined( player.Toggle ), ::multiple_functions_syntax, undefined, "Toggle Function" );  
 
             Option Definition = ( "Name Function", "Function", "parameter 1", "parameter 2", "parameter 3", "parameter 4", "parameter 5" )
-            self Option( "Test Toggle", ::multiple_functions, undefined, "Toggle Function" );
+            self Option( "Test Toggle", ::multiple_functions_syntax, undefined, "Toggle Function" );
             */
             if(!isDefined(self.Toggle))
             {
@@ -87,7 +87,7 @@ multiple_functions_syntax(parameter, command)
             How to call Boolean Function syntax
 
             ToggleCheckBox Definition = ( "Name Function", "Toggle", "Function", "parameter 1", "parameter 2", "parameter 3", "parameter 4", "parameter 5" )
-            self ToggleCheckBox( "Test Boolean", isDefined( player.Boolean ), ::multiple_functions, undefined, "Boolean Function" );  
+            self ToggleCheckBox( "Test Boolean", isDefined( player.Boolean ), ::multiple_functions_syntax, undefined, "Boolean Function" );  
             */
 
             self.Boolean = isDefined(self.Boolean) ? undefined : true;
@@ -108,7 +108,7 @@ multiple_functions_syntax(parameter, command)
             How to call For Each Function syntax
             
             Option Definition = ( "Name Function", "Function", "parameter 1", "parameter 2", "parameter 3", "parameter 4", "parameter 5" )
-            self Option( "Test For Each Function", ::multiple_functions, undefined, "For Each Function" );
+            self Option( "Test For Each Function", ::multiple_functions_syntax, undefined, "For Each Function" );
             */
 
             if(!self.StopYouFromSelectingOptionIfUsing) // If Not true run code
@@ -132,7 +132,7 @@ multiple_functions_syntax(parameter, command)
             How to call For Function syntax
 
             Option Definition = ( "Name Function", "Function", "parameter 1", "parameter 2", "parameter 3", "parameter 4", "parameter 5" )
-            self Option( "Test For Function", ::multiple_functions, undefined, "For Function" );
+            self Option( "Test For Function", ::multiple_functions_syntax, undefined, "For Function" );
             */
             if(!self.StopYouFromSelectingOptionIfUsing) // If Not true run code
             {
@@ -155,7 +155,7 @@ multiple_functions_syntax(parameter, command)
             How to call loop Function syntax
 
             ToggleCheckBox Definition = ( "Name Function", "Toggle", "Function", "parameter 1", "parameter 2", "parameter 3", "parameter 4", "parameter 5" )
-            self ToggleCheckBox( "Test Loop", isDefined( player.LoopBoolean ), ::multiple_functions, undefined, "Loop Function" ); 
+            self ToggleCheckBox( "Test Loop", isDefined( player.LoopBoolean ), ::multiple_functions_syntax, undefined, "Loop Function" ); 
 
             */
             self.LoopBoolean = isDefined(self.LoopBoolean) ? undefined : true;
