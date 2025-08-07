@@ -9,7 +9,7 @@ To integrate this system into your project, you'll need to use your own createTe
 Here my createText parameter
 createText(font, fontScale, align, relative, x, y, sort, alpha, text, color, isLevel = "self", glowColor, glowAlpha, moveOverTime, fadeOverTime, changeFontScaleOverTime, team )
 
-Bonus: You won?t encounter the ?CG_Spawn: no free entities? overflow error when using my custom iPrint system. Unlike setTypeWriterFX, which can cause the game to overflow when used excessively, my system includes a string overflow fix that allows for safe and repeated usage without any performance issues.
+Bonus: You won't encounter the (CG_Spawn: no free entities} overflow error when using my custom iPrint system. Unlike setTypeWriterFX, which can cause the game to overflow when used excessively, my system includes a string overflow fix that allows for safe and repeated usage without any performance issues.
 */
 
 CustomIPrint( parameter, command, hud, isparameterarray = undefined )
@@ -144,4 +144,5 @@ arrayRemoveIndex(array, index)
     }
     return newArray;
 }
+
 
