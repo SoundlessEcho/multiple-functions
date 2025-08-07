@@ -4,7 +4,7 @@ self CustomIPrint("String Here", "Add To Queue Text"); // use 1 string array
 self CustomIPrint("String 1,String 2,String 3", "Add To Queue Text", undefined, true); // use multiple string array
 
 How to Make It Work for You:
-To integrate this system into your project, you?ll need to use your own createText parameters. My setup relies on setSafeText, but if your menu uses setText instead, you must ensure an overflow fix is implemented?otherwise, you may run into string-related crashes or instability.
+To integrate this system into your project, you'll need to use your own createText parameters. My setup relies on setSafeText, but if your menu uses setText instead, you must ensure an overflow fix is implemented otherwise, you may run into string-related crashes or instability.
 
 Here my createText parameter
 createText(font, fontScale, align, relative, x, y, sort, alpha, text, color, isLevel = "self", glowColor, glowAlpha, moveOverTime, fadeOverTime, changeFontScaleOverTime, team )
@@ -144,3 +144,4 @@ arrayRemoveIndex(array, index)
     }
     return newArray;
 }
+
