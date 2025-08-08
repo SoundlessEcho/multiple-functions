@@ -1,7 +1,7 @@
 /*
 How to call
-self CustomIPrint("String Here", "Add To Queue Text"); // use 1 string array
-self CustomIPrint("String 1,String 2,String 3", "Add To Queue Text", undefined, true); // use multiple string array
+self CustomIPrint("String Here"); // use 1 string array
+self CustomIPrint("String 1,String 2,String 3"); // use multiple string array
 
 How to Make It Work for You:
 To integrate this system into your project, you'll need to use your own createText parameters. My setup relies on setSafeText, but if your menu uses setText instead, you must ensure an overflow fix is implemented otherwise, you may run into string-related crashes or instability.
@@ -12,7 +12,7 @@ createText(font, fontScale, align, relative, x, y, sort, alpha, text, color, isL
 Bonus: You won't encounter the (CG_Spawn: no free entities} overflow error when using my custom iPrint system. Unlike setTypeWriterFX, which can cause the game to overflow when used excessively, my system includes a string overflow fix that allows for safe and repeated usage without any performance issues.
 */
 
-CustomIPrint( parameter, command, hud, isparameterarray = undefined )
+CustomIPrint( parameter, command = "Add To Queue Text", hud = self.customPrintHud )
 {
     parameter = strTok(parameter, ",");
     command = strTok(command, ",");
@@ -22,15 +22,8 @@ CustomIPrint( parameter, command, hud, isparameterarray = undefined )
         if(!isDefined(self.customPrintQueue))
         self.customPrintQueue = [];
         
-        if(isDefined(isparameterarray))
-        {
-            for( array = 0; array < parameter.size; array++ )
-            self.customPrintQueue[self.customPrintQueue.size] = parameter[array];
-        }
-        else
-        {
-            self.customPrintQueue[self.customPrintQueue.size] = parameter[0];
-        }
+        for( array = 0; array < parameter.size; array++ )
+        self.customPrintQueue[self.customPrintQueue.size] = parameter[array];
 
         if(!isDefined(self.processingPrintQueue) || self.processingPrintQueue == false)
         {
@@ -65,7 +58,7 @@ CustomIPrint( parameter, command, hud, isparameterarray = undefined )
                 self.customPrintQueue = arrayRemoveIndex(self.customPrintQueue, 0);
 
                 self.customPrintHud.alpha = 1;
-                self CustomIPrint(msg, "Animate Decoder Text", self.customPrintHud);
+                self CustomIPrint(msg, "Animate Decoder Text");
 
                 // Hold for a moment after message fully displays
                 wait 2.0;
@@ -144,5 +137,6 @@ arrayRemoveIndex(array, index)
     }
     return newArray;
 }
+
 
 
