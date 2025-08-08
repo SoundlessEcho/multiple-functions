@@ -107,15 +107,15 @@ CustomIPrint( parameter, command = "Add To Queue Text", hud = self.customPrintHu
             {
                 flicker = "";
                 for (x = 0; x < i; x++)
-                flicker += "" + parameter[0][x];//^7
-                flicker += "^1" + charset[randomInt(charset.size)];//^1
+                flicker += "" + parameter[0][x];
+                flicker += "^1" + charset[randomInt(charset.size)];
                 hud setSafeText(flicker);
                 wait 0.05;
             }
 
             real = "";
             for (x = 0; x < i; x++)
-            real += "" + parameter[0][x];//^7
+            real += "" + parameter[0][x];
             hud setSafeText(real);
             wait 0.05;
         }
@@ -137,6 +137,7 @@ arrayRemoveIndex(array, index)
     }
     return newArray;
 }
+
 
 
 
