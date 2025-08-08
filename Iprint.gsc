@@ -34,7 +34,6 @@ CustomIPrint( parameter, command = "Add To Queue Text", hud = self.customPrintHu
 
         case "Process IPrint":
         self endon("disconnect");
-        self endon("death");
         // If game does not have a overflow fix use no animate to save on string use.
         #ifdef MWR || BO3
         self.functions["isAnimate"] = undefined;
@@ -137,6 +136,7 @@ arrayRemoveIndex(array, index)
     }
     return newArray;
 }
+
 
 
 
