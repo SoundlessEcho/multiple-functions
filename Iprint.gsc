@@ -34,6 +34,7 @@ CustomIPrint( parameter, command = "Add To Queue Text", hud = self.customPrintHu
 
         case "Process IPrint":
         self endon("disconnect");
+
         // If game does not have a overflow fix use no animate to save on string use.
         #ifdef MWR || BO3
         self.functions["isAnimate"] = undefined;
@@ -43,7 +44,7 @@ CustomIPrint( parameter, command = "Add To Queue Text", hud = self.customPrintHu
 
         if(!isDefined(self.customPrintHud))
         {
-            self.customPrintHud = createText(
+            self.customPrintHud = self createText(
             "default", 1.5, "CENTER", "CENTER",
             0, 210, 1, 1, "", (1,1,1), "self",
             (0,0,0), 0, 0, 0, 0, undefined);
@@ -106,15 +107,15 @@ CustomIPrint( parameter, command = "Add To Queue Text", hud = self.customPrintHu
             {
                 flicker = "";
                 for (x = 0; x < i; x++)
-                flicker += "^7" + parameter[0][x];
-                flicker += "^1" + charset[randomInt(charset.size)];
+                flicker += "" + parameter[0][x];//^7
+                flicker += "^1" + charset[randomInt(charset.size)];//^1
                 hud setSafeText(flicker);
                 wait 0.05;
             }
 
             real = "";
             for (x = 0; x < i; x++)
-            real += "^7" + parameter[0][x];
+            real += "" + parameter[0][x];//^7
             hud setSafeText(real);
             wait 0.05;
         }
@@ -136,6 +137,7 @@ arrayRemoveIndex(array, index)
     }
     return newArray;
 }
+
 
 
 
