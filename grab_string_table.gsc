@@ -101,7 +101,7 @@ GetTableString(command)
             GetEffects_Name[GetEffects_Name.size] = current_fx;
             addToArray(GetEffects_Name, current_fx);
         }
-        level.GetEffect = removeDuplicates(GetEffects_Name);
+        level.GetEffect = RemoveDuplicatesArray(GetEffects_Name);
         break;
 
         case "Model Name":
@@ -123,7 +123,7 @@ GetTableString(command)
             GetModels_Name[GetModels_Name.size] = current;
             addToArray(GetModels_Name, current);
         }
-        level.GetModel = removeDuplicates(GetModels_Name);
+        level.GetModel = RemoveDuplicatesArray(GetModels_Name);
         break;
 
         case "Weapon Name":
