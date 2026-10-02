@@ -15,9 +15,9 @@ multiple_functions_Table(parameter, command, player)
     parameter = strTok(parameter, ",");
     command = strTok(command, ",");
 
-    if (isDefined(command[0]))
+    if(isDefined(command[0]))
     {
-        switch (command[0])
+        switch(command[0])
         {
             case "Set Effect":
             if(parameter[0] == "Delete")
@@ -35,7 +35,7 @@ multiple_functions_Table(parameter, command, player)
 
             self notify("End_Effect_Test");
             self endon("End_Effect_Test");
-            while (1)
+            while(1)
             {
                 self waittill("weapon_fired");
                 // Get player position and direction
@@ -64,7 +64,7 @@ multiple_functions_Table(parameter, command, player)
                         #else
                         SpawnScaleFX(level._effect[parameter[0]], pos, self.angles, 0.5, 0.2);
                         #endif
-                }
+                    }
                 }
 
                 // Impact effect
@@ -100,13 +100,13 @@ multiple_functions_Table(parameter, command, player)
 
 SpawnScaleFX(effect, origin, angles, scale, lifetime)
 {
-    if (!isDefined(effect))
+    if(!isDefined(effect))
         return;
 
-    if (!isDefined(scale))
+    if(!isDefined(scale))
         scale = 1;
 
-    if (!isDefined(lifetime))
+    if(!isDefined(lifetime))
         lifetime = 2;
 
     numFX = int(scale * 3);  // number of FX copies
@@ -115,7 +115,7 @@ SpawnScaleFX(effect, origin, angles, scale, lifetime)
     fxEntities = [];
 
     // Spawn FX copies
-    for (i = 0; i < numFX; i++)
+    for(i = 0; i < numFX; i++)
     {
         angle = (360 / numFX) * i;
         offset = (cos(angle) * radius, sin(angle) * radius, 0);
@@ -134,9 +134,9 @@ deleteFXArrayAfter(fxEntities, lifetime)
 {
     wait lifetime;
 
-    for (i = 0; i < fxEntities.size; i++)
+    for(i = 0; i < fxEntities.size; i++)
     {
-        if (isDefined(fxEntities[i]))
+        if(isDefined(fxEntities[i]))
             fxEntities[i] delete();
     }
 }
